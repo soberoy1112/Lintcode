@@ -10,4 +10,4 @@ if LL[0] < 0:
 			break
 elif LL[0] >= 0:
 	summ = LL[0]
-print(summ)		
+print(summ)
