@@ -1,6 +1,6 @@
 #/usr/bin/env python3
 # -*- coding: utf-8 -*-
-class checkNum(object):
+class Solution(object):
 	def __init__(self, num):
 		self.num = num
 	def isUgly(self):
@@ -15,7 +15,7 @@ class checkNum(object):
 				self.num = self.num // 5
 			return self.num
 x = int(input('Please give a number: '))
-n = checkNum(x)
+n = Solution(x)
 if n.isUgly() == 1:
 	print('True')
 else:
