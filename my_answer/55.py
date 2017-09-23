@@ -1,20 +1,27 @@
-#/usr/bin/env python3
-# -*- coding: utf-8 -*-
-A = "ABCD"
-B = "ACD"
-def replaceAndCheck(x, y):
-	flag = False
-	L1 = list(x)
-	L2 = list(y)
-	for i in L2:
-		if i not in L1:
-			flag = False
-			break
-		else:
-			for j in range(len(L1)):
-				if i == L1[j]:
-					L1[j] = '0'
-					flag = True
-	return flag
-
-print(replaceAndCheck(A, B))
+class Solution:
+    """
+    @param: A: A string
+    @param: B: A string
+    @return: if A contains all of the characters in B return true else false
+    """
+    def compareStrings(self, A, B):
+        # write your code here
+        flag = True
+        if B == "":
+        	flag = True
+        else:
+        	if len(B) > len(A):
+        		flag = False
+        		return flag
+        	else:
+        		for i in B:
+        			if i not in A:
+        				flag = False
+        				return flag
+        			else:
+        				A = A.replace(i, "0", 1)
+        				print(i)
+        				print(A)
+        return flag
+x = Solution()
+print(x.compareStrings("ABCDEFG", "ACC"))
