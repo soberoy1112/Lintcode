@@ -1,14 +1,18 @@
 class Solution:
     """
-    @param: nums: an integer array
-    @return:
+    @param: prices: Given an integer array
+    @return: Maximum profit
     """
-    def moveZeroes(self, nums):
+    def maxProfit(self, prices):
         # write your code here
-        left = 0
-        right = 0
-        while right < len(nums):
-            if nums[right] != 0:
-                nums[left], nums[right] = nums[right], nums[left]
-                left += 1
-            right += 1
+        deal = []
+        if len(prices) == 0 or len(prices) == 1:
+            return 0
+        for i in range(1, len(prices)):
+            deal.append(max(prices[i:]) - min(prices[:i]))
+        if max(deal) > 0:
+            return max(deal)
+        else:
+            return 0 
+x = Solution()
+print(x.maxProfit([3,2,3,1,2]))
