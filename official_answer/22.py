@@ -6,7 +6,7 @@ class Solution(object):
     def flatten(self, nestedList):
         # Write your code here
         if isinstance(nestedList, int):
-            return nestedList
+            return [nestedList]
         S = str(nestedList)
         s = ""
         flag = False
